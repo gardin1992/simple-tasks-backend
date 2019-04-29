@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var http = require('http');
 var mongoose = require('mongoose');
+var cors = require('cors');
 
 var config = {
 	db: 'mongodb://localhost:27017/my-crud-app'
@@ -14,6 +15,7 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 /* routes */
 var tasksRouter = require('./routes');

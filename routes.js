@@ -25,12 +25,14 @@ router.post('/', (req, res) => {
 
 	const data = req.body;
 
+	delete data._id;
+	
 	const task = new TasksModel(data);
 
 	task.save()
 		.then(result => {
 
-			res.json(data);
+			res.json(result);
 		})
 		.catch(err => {
 
@@ -46,7 +48,7 @@ router.put('/:id', (req, res) => {
 	TasksModel.findOneAndUpdate({_id: id}, data)
 		.then(response => {
 
-			res.json(response)
+			res.json(data)
 		})
 		.catch(err => {
 

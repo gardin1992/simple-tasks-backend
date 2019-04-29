@@ -14,6 +14,7 @@
   "author": "Joao Gardin <gardin1992@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.5.4"
   }
